@@ -1,0 +1,120 @@
+/* ==========================================================================
+   STYLE KUSTOM WEBSITES PAWSHINE PET GROOMING
+   ========================================================================== */
+
+/* 1. Pengaturan Smooth Scroll & Base */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    overflow-x: hidden;
+}
+
+/* 2. Custom Scrollbar Bertema Emerald */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+}
+
+/* 3. Header Glassmorphism Effect */
+header {
+    background-color: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+/* Hover Underline pada Menu Navigasi */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #10b981;
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* 4. Efek Hover Interaktif Kartu Layanan & Testimoni */
+#layanan .group, 
+#testimoni .bg-white {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
+    will-change: transform;
+}
+
+#layanan .group:hover, 
+#testimoni .bg-white:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.12), 
+                0 8px 10px -6px rgba(16, 185, 129, 0.06);
+    border-color: #a7f3d0;
+}
+
+/* Efek Cahaya (Glow) pada Ikon Layanan */
+#layanan .group:hover .w-14 {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
+}
+
+/* 5. Transisi Gambar Fasilitas */
+#tentang img {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#tentang .relative:hover img {
+    transform: scale(1.04);
+}
+
+/* 6. Form Input & Modal Animation */
+input:focus, select:focus {
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+#bookingModal > div {
+    animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 7. Toast Notification */
+#toast {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
